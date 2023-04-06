@@ -27,13 +27,13 @@ int pal_checker(char *s, int l, int r)
 		if (l > r / 2)
 			return (1);
 		else
-			return (pal_checker(s, l, r - 1));
+			return (pal_checker(s, l + 1, r - 1));
 	else
 		return (0);
 }
 
 /**
- * is_palindrome - returns 1 if  string is palindrome, 0 if not
+ * is_palindrome - returns 1 if string is palindrome, 0 if not
  * @s: string
  * Return: 1 if it is palindrome, 0 if not
  */
