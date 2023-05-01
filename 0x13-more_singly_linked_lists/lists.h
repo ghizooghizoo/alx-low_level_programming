@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h>
 
 /**
  * strurct listins_s - singly linked list
@@ -10,7 +11,6 @@
  * @next: points to the next node
  *
  * Desctiption: singly linked list node structure
- * for alx project
  */
 typedef struct listint_s
 {
