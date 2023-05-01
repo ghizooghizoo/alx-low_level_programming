@@ -6,11 +6,11 @@
 #include <string.h>
 
 /**
- * strurct listint_s - singly linked list
+ * struct listint_s - singly linked list
  * @n: integer
  * @next: points to the next node
  *
- * Desctiption: singly linked list node structure
+ * Description: singly linked list node structure
  *
  */
 typedef struct listint_s
