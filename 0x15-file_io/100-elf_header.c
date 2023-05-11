@@ -46,7 +46,7 @@ int main(__silent int argc, char *argv[])
 	int O, R;
 
 	O = open(argv[1], O_RDONLY);
-	if (0 == -1)
+	if (O == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
@@ -54,7 +54,7 @@ int main(__silent int argc, char *argv[])
 	h = malloc(sizeof(Elf64_Ehdr));
 	if (h == NULL)
 	{
-		close_elf(0);
+		close_elf(O);
 		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
 		exit(98);
 	}
@@ -62,7 +62,7 @@ int main(__silent int argc, char *argv[])
 	if (R == -1)
 	{
 		free(h);
-		close_elf(0);
+		close_elf(O);
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 		exit(98);
 	}
@@ -79,6 +79,6 @@ int main(__silent int argc, char *argv[])
 	print_entry(h->e_entry, h->e_ident);
 
 	free(h);
-	close_elf(0);
+	close_elf(O);
 	return (0);
 }
